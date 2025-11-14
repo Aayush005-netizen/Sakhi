@@ -1,0 +1,319 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --font-size: 16px;
+  
+  /* Sakhi PCOS App Design System */
+  --dusty-rose: #D96D77;
+  --soft-blush: #FDECEF;
+  --lavender-mist: #C7B8EA;
+  --warm-beige: #FFF7F2;
+  --slate: #3D405B;
+  
+  /* Light Mode Colors */
+  --background: #FDECEF;
+  --foreground: #3D405B;
+  --card: #FFF7F2;
+  --card-foreground: #3D405B;
+  --popover: #FFFFFF;
+  --popover-foreground: #3D405B;
+  --primary: #D96D77;
+  --primary-foreground: #FFFFFF;
+  --secondary: #C7B8EA;
+  --secondary-foreground: #3D405B;
+  --muted: #FFF7F2;
+  --muted-foreground: #8B8FA3;
+  --accent: #C7B8EA;
+  --accent-foreground: #3D405B;
+  --destructive: #d4183d;
+  --destructive-foreground: #ffffff;
+  --border: rgba(217, 109, 119, 0.15);
+  --input: transparent;
+  --input-background: #FFF7F2;
+  --switch-background: #E5C4C8;
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --ring: #D96D77;
+  
+  /* Chart Colors - Pastel Theme */
+  --chart-1: #D96D77;
+  --chart-2: #C7B8EA;
+  --chart-3: #F4A5AE;
+  --chart-4: #B8E0D2;
+  --chart-5: #FFD3B6;
+  
+  --radius: 1.25rem;
+  
+  /* Sidebar */
+  --sidebar: #FFFFFF;
+  --sidebar-foreground: #3D405B;
+  --sidebar-primary: #D96D77;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #FFF7F2;
+  --sidebar-accent-foreground: #3D405B;
+  --sidebar-border: rgba(217, 109, 119, 0.15);
+  --sidebar-ring: #D96D77;
+}
+
+.dark {
+  /* Dark Mode Colors */
+  --background: #1A1A1E;
+  --foreground: #F5E6E8;
+  --card: #2A2A2E;
+  --card-foreground: #F5E6E8;
+  --popover: #2A2A2E;
+  --popover-foreground: #F5E6E8;
+  --primary: #E8899F;
+  --primary-foreground: #1A1A1E;
+  --secondary: #D4C5F9;
+  --secondary-foreground: #1A1A1E;
+  --muted: #2A2A2E;
+  --muted-foreground: #B8B8C0;
+  --accent: #D4C5F9;
+  --accent-foreground: #1A1A1E;
+  --destructive: #ff6b9d;
+  --destructive-foreground: #1A1A1E;
+  --border: rgba(232, 137, 159, 0.2);
+  --input: #2A2A2E;
+  --ring: #E8899F;
+  
+  /* Chart Colors - Dark Mode Pastels */
+  --chart-1: #E8899F;
+  --chart-2: #D4C5F9;
+  --chart-3: #FFB4BE;
+  --chart-4: #C8EDE0;
+  --chart-5: #FFE0C8;
+  
+  /* Sidebar Dark */
+  --sidebar: #1A1A1E;
+  --sidebar-foreground: #F5E6E8;
+  --sidebar-primary: #E8899F;
+  --sidebar-primary-foreground: #1A1A1E;
+  --sidebar-accent: #2A2A2E;
+  --sidebar-accent-foreground: #F5E6E8;
+  --sidebar-border: rgba(232, 137, 159, 0.2);
+  --sidebar-ring: #E8899F;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-input-background: var(--input-background);
+  --color-switch-background: var(--switch-background);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 8px);
+  --radius-md: calc(var(--radius) - 4px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+}
+
+/**
+ * Base typography. This is not applied to elements which have an ancestor with a Tailwind text class.
+ */
+@layer base {
+  :where(:not(:has([class*=' text-']), :not(:has([class^='text-'])))) {
+    h1 {
+      font-size: var(--text-2xl);
+      font-weight: 600;
+      line-height: 1.3;
+    }
+
+    h2 {
+      font-size: var(--text-xl);
+      font-weight: 600;
+      line-height: 1.4;
+    }
+
+    h3 {
+      font-size: var(--text-lg);
+      font-weight: 600;
+      line-height: 1.4;
+    }
+
+    h4 {
+      font-size: var(--text-base);
+      font-weight: 600;
+      line-height: 1.5;
+    }
+
+    p {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-normal);
+      line-height: 1.6;
+    }
+
+    label {
+      font-size: var(--text-sm);
+      font-weight: 500;
+      line-height: 1.5;
+    }
+
+    button {
+      font-size: var(--text-base);
+      font-weight: 500;
+      line-height: 1.5;
+    }
+
+    input {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-normal);
+      line-height: 1.5;
+    }
+  }
+}
+
+html {
+  font-size: var(--font-size);
+}
+
+/* Custom Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulse-soft {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out;
+}
+
+.animate-slide-in-right {
+  animation: slideInRight 0.4s ease-out;
+}
+
+.animate-slide-in-left {
+  animation: slideInLeft 0.4s ease-out;
+}
+
+.animate-pulse-soft {
+  animation: pulse-soft 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.animate-shimmer {
+  animation: shimmer 2s infinite;
+  background: linear-gradient(to right, transparent 0%, rgba(255, 255, 255, 0.3) 50%, transparent 100%);
+  background-size: 1000px 100%;
+}
+
+/* Active State Utilities */
+.active\:scale-95:active {
+  transform: scale(0.95);
+}
+
+.active\:scale-98:active {
+  transform: scale(0.98);
+}
+
+/* Transition Utilities */
+.transition-all {
+  transition: all 0.2s ease;
+}
+
+.transition-transform {
+  transition: transform 0.2s ease;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--muted);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--secondary);
+}
